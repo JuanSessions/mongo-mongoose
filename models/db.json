@@ -1,0 +1,33 @@
+{
+  "records": [
+    {
+      "name": "record1",
+      "id": "Wed Apr 22 2020 10:06:53 GMT+0200 (Central European Summer Time)"
+    },
+    {
+      "id": "Wed Apr 22 2020 11:24:17 GMT+0200 (Central European Summer Time)",
+      "title": "District Brand Executive",
+      "artist": "Bednar - Abernathy",
+      "year": 2005,
+      "img": "http://lorempixel.com/640/480/nightlife",
+      "price": 736
+    }
+  ],
+  "orders": [
+    {
+      "id": "Wed Apr 22 2020 11:49:02 GMT+0200 (Central European Summer Time)",
+      "title": "Central Tactics Analyst",
+      "artist": "Hermiston LLC",
+      "year": 1990,
+      "img": "http://lorempixel.com/640/480/nightlife",
+      "price": 2
+    }
+  ],
+  "users": [
+    {
+      "username": "ali",
+      "password": "abc",
+      "id": "Wed Apr 22 2020 11:49:53 GMT+0200 (Central European Summer Time)"
+    }
+  ]
+}
