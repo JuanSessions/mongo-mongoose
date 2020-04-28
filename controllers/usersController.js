@@ -1,14 +1,14 @@
 const createError = require("http-errors")
 const db = require("../models/db")
 const User = require("../models/userSchema")
-    //const uuid = require("uuid-random")
+
+
 
 exports.getUsers = async(req, res, next) => {
     // let users = db.get("users").value()
 
     try {
         const users = await User.find()
-        res.header("Access-control-Allow-Origin", "*")
         res.json({
             success: true,
             users: users
@@ -41,6 +41,7 @@ exports.postUser = async(req, res, next) => {
     console.log(req.body)
 
     try {
+
         const user = new User(req.body)
         await user.save()
         res.json({

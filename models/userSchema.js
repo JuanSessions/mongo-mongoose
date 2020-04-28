@@ -35,9 +35,11 @@ const UserSchema = new Schema({
     // }
 })
 
+
+
 UserSchema.virtual("fullName").get(function(name) {
     return `${this.firstName} ${this.lastName}`
 })
 
 module.exports = mongoose.model("User", UserSchema)
-    //u r storing the data "userschemae "it in the "user" collection
+    //export data "userSchema "it in the "user" collection

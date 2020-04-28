@@ -12,7 +12,11 @@ const {
     log
 } = require("./middleware/log")
 
-const port = process.env.PORT || 3001;
+const {
+    setCors
+} = require("./middleware/security")
+
+const port = process.env.PORT || 3000;
 
 mongoose.connect("mongodb://127.0.0.1:27017/record-shop-mongo", {
     useNewUrlParser: true,
@@ -26,7 +30,7 @@ mongoose.connection.on("open", () => console.log("database connected"))
 app.use(express.json())
     //this is the middleware, getting data from the controller
 app.use(logger("dev"))
-
+app.use(setCors)
 
 app.use("/", indexRoute)
 
