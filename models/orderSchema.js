@@ -8,13 +8,17 @@ const OrderSchema = new Schema({
         type: Number,
         required: true
     },
-    record: {
-        type: String,
-        required: true
-    },
+    record: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Record"
+    }], //an array here so u can order as many records as u want
     createAt: {
         type: Date,
         default: Date.now
+    },
+    quantity: {
+        type: Number,
+        required: true
     }
 })
 

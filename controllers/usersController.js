@@ -93,3 +93,26 @@ exports.deleteUser = async(req, res, next) => {
     }
 
 }
+
+exports.login = async(req, res, next) => {
+
+    const {
+        email,
+        password
+    } = req.body
+    try {
+        const user = await User.findOne({
+            email,
+            password
+        })
+        if (!user) throw createError(404)
+        res.header("test", "123")
+        res.json({
+            success: true,
+            user: user
+        })
+    } catch (err) {
+        next(err)
+    }
+
+}

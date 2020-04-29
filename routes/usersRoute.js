@@ -4,7 +4,8 @@ const {
     getUser,
     postUser,
     putUser,
-    deleteUser
+    deleteUser,
+    login
 } = require("../controllers/usersController")
 const {
     validateInputs
@@ -17,7 +18,7 @@ const {
 Route.get("/", getUsers)
 Route.get("/:id", getUser)
 Route.post("/", validateInputs(), postUser)
-
+Route.post("/login", login)
 
 
 /* Route.route("/")
@@ -27,6 +28,7 @@ Route.post("/", validateInputs(), postUser)
 Route.put("/:id", putUser)
 
 Route.delete("/:id", deleteUser)
+
 
 
 

@@ -5,6 +5,7 @@ const {
 } = mongoose;
 //or const Schema = mongoose.Schema
 
+const AddressSchema = require("./addressSchema")
 
 //u take out the schema from mongoose with the new constructor and u store into this variable n which data
 const UserSchema = new Schema({
@@ -24,7 +25,8 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    address: AddressSchema
 
 }, {
     toObject: {
