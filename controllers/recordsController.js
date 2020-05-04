@@ -2,21 +2,18 @@ const createError = require("http-errors")
 
 const Record = require("../models/recordSchema")
 
+const jwt = require("jsonwebtoken")
+
 exports.getRecords = async(req, res, next) => {
 
     try {
-        const value = req.header("test")
-        if (value === "123") {
 
-            const records = await Record.find()
+        const records = await Record.find()
 
-            res.json({
-                success: true,
-                records: records
-            })
-        } else {
-            throw createError(404)
-        }
+        res.json({
+            success: true,
+            records: records
+        })
     } catch (err) {
         next(err)
     }

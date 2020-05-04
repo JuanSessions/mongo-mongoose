@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.5.1",
     "lowdb": "^1.0.0",
     "mongoose": "^5.9.10",
     "uuid": "^7.0.3",
