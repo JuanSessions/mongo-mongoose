@@ -14,6 +14,7 @@ const {
     compare
 } = require("../lib/encryption")
 
+const env = require("../config/config")
 
 
 //u take out the schema from mongoose with the new constructor and u store into this variable n which data
@@ -70,7 +71,7 @@ UserSchema.methods.generateAuthToken = function() {
     const user = this;
     const token = jwt.sign({
         _id: user._id
-    }, "secretkey").toString()
+    }, env.jwt_key).toString()
 
     user.tokens.push({ //pushing token into the database and see it as an object
         token
@@ -113,7 +114,7 @@ UserSchema.statics.findByToken = function(token) {
     const User = this;
     let decoded;
     try {
-        decoded = jwt.verify(token, "secretkey")
+        decoded = jwt.verify(token, env.jwt_key)
     } catch (e) {
         return;
     }

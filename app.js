@@ -3,6 +3,7 @@ const app = express()
 const createError = require("http-errors")
 const mongoose = require("mongoose")
 const logger = require("morgan")
+const env = require("./config/config")
 
 const indexRoute = require("./routes/indexRoute")
 const recordsRoute = require("./routes/recordsRoute")
@@ -18,7 +19,7 @@ const {
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect("mongodb://127.0.0.1:27017/record-shop-mongo", {
+mongoose.connect(env.db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
