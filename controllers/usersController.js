@@ -48,7 +48,9 @@ exports.postUser = async(req, res, next) => {
 
         const data = user.getPublicFields()
 
-        res.header("x-auth", token).json({
+        res.cookie("x-auth", token, {
+            secure: true
+        }).json({
             success: true,
             user: user
         })
@@ -111,14 +113,14 @@ exports.login = async(req, res, next) => {
         })
         console.log("test1")
         const valid = await user.checkPassword(password)
-        console.log("tset2")
+        console.log("test2")
         if (!valid) throw createError(403)
 
         let token = user.generateAuthToken()
         const data = user.getPublicFields()
 
 
-        res.header("x-auth", token).json({
+        res.cookie("x-auth", token).json({
             success: true,
             user: data
         })

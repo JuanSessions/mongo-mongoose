@@ -4,6 +4,7 @@ const createError = require("http-errors")
 const mongoose = require("mongoose")
 const logger = require("morgan")
 const env = require("./config/config")
+    //const CookieParser = require("cookie-parser")
 
 const indexRoute = require("./routes/indexRoute")
 const recordsRoute = require("./routes/recordsRoute")
@@ -27,7 +28,7 @@ mongoose.connect(env.db, {
 mongoose.connection.on("error", (err) => console.log(err))
 mongoose.connection.on("open", () => console.log("database connected"))
 
-
+//app.use(CookieParser())
 app.use(express.json())
     //this is the middleware, getting data from the controller
 app.use(logger("dev"))

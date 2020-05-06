@@ -2,7 +2,7 @@ const User = require("../models/userSchema")
 const createError = require("http-errors")
 
 const auth = async(req, res, next) => {
-    const token = req.header("x-auth")
+    const token = req.cookies["x-auth"]
         //console.log(token)
 
     try {
